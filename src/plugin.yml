@@ -1,0 +1,19 @@
+name: AdminPrivateChat
+main: com.ammaraskar.adminonly.AdminChat
+version: 0.5
+author: ammaraskar
+description: >
+             Talk with other admins privately
+commands:
+  amsg:
+    description: Talk with other admins privately
+    usage: |
+            /amsg message
+  a:
+    description: Alias for amsg, can be enabled from config
+    usage: |
+            /a message
+  atoggle:
+    description: Toggle admin only chat
+    usage: |
+            /atoggle 
