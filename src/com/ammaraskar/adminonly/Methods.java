@@ -25,7 +25,7 @@ public class Methods{
 	public void MessageBuild(String message, String playername) {
 		final String msg = ChatColor.RED + "[AdminChat] " + ChatColor.WHITE + "<" + ChatColor.LIGHT_PURPLE + playername + ChatColor.WHITE + "> " + message;
 		sendMessage(msg);
-		adminchat.getLogger().info("<" + playername + ">" + ChatColor.stripColor(message));
+		adminchat.getLogger().info("<" + playername + ">" + " " + ChatColor.stripColor(message));
 	}
 
 	public static void sendMessage(String msg) {	
