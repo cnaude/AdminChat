@@ -1,6 +1,6 @@
 name: AdminPrivateChat
 main: com.ammaraskar.adminonly.AdminChat
-version: 0.5
+version: 1.0
 author: ammaraskar
 description: >
              Talk with other admins privately
@@ -17,3 +17,13 @@ commands:
     description: Toggle admin only chat
     usage: |
             /atoggle 
+permissions:
+  adminchat.send:
+    default: false
+    description: allows player to send out message with /a or /amsg
+  adminchat.recieve:
+    default: false
+    description: allows player to recieve messages sent with /a or /amsg
+  adminchat.toggle:
+    default: false
+    description: allows player to toggle sending to all admins on and off

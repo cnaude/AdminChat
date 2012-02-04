@@ -30,7 +30,7 @@ public class Methods{
 
 	public static void sendMessage(String msg) {	
         for (final Player plr : Bukkit.getServer().getOnlinePlayers()) {
-            if (plr.hasPermission("AdminChat.recieve") || plr.isOp()) {
+            if (plr.hasPermission("adminchat.recieve") || plr.isOp()) {
                 plr.sendMessage(msg);
             }	
         }

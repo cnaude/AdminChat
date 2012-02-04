@@ -11,7 +11,7 @@ public class AdminChatCommand implements CommandExecutor {
     }
     
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender.hasPermission("AdminChat.send") || sender.isOp()){
+        if (sender.hasPermission("adminchat.send") || sender.isOp()){
         		String playername = sender.getName();
         		final String message = com.ammaraskar.adminonly.Methods.combineSplit(0, args, " ");
         		methods.MessageBuild(message, playername);

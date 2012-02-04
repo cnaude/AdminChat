@@ -13,7 +13,7 @@ public class AdminChatToggleCommand implements CommandExecutor{
     }
     
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-    	if(sender.hasPermission("AdminChat.toggle") || sender.isOp()){
+    	if(sender.hasPermission("adminchat.toggle") || sender.isOp()){
     		if(adminchat.listOfTogglePlayers.contains(sender.getName())){
 	    		adminchat.listOfTogglePlayers.remove(sender.getName());
 	    		sender.sendMessage(ChatColor.RED + "Detoggled Admin Chat");
