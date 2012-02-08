@@ -27,7 +27,7 @@ public class Methods{
 		msg = msg.replace("%playername", playername);
 		msg = msg.replace("%message", message);
 		sendMessage(msg);
-		adminchat.getLogger().info("<" + playername + ">" + " " + ChatColor.stripColor(message));
+		adminchat.getLogger().info(ChatColor.stripColor(msg));
 	}
 
 	public static void sendMessage(String msg) {	
