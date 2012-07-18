@@ -38,10 +38,6 @@ public class AdminChatCommand implements CommandExecutor {
                 PlayerChatEvent event = new PlayerChatEvent(player, message);
                 plugin.getServer().getPluginManager().callEvent(event);
 
-                if (event.isCancelled()) {
-                    return true;
-                }
-
                 String s = String.format(event.getFormat(), event.getPlayer().getDisplayName(), event.getMessage());
                 Bukkit.getConsoleSender().sendMessage(s);
                 for (Player recipient : event.getRecipients()) {
