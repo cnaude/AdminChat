@@ -4,15 +4,15 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
-public class Methods{
-	
-	AdminChat adminchat;
-	
-    public Methods(AdminChat adminChat) {
-		this.adminchat = adminChat;
-	}
+public class Methods {
 
-	public static String combineSplit(int startIndex, String[] string, String seperator) {
+    AdminChat adminchat;
+
+    public Methods(AdminChat adminChat) {
+        this.adminchat = adminChat;
+    }
+
+    public static String combineSplit(int startIndex, String[] string, String seperator) {
         final StringBuilder builder = new StringBuilder();
         for (int i = startIndex; i < string.length; i++) {
             builder.append(string[i]);
@@ -22,22 +22,22 @@ public class Methods{
         return builder.toString();
     }
 
-	public void MessageBuild(String message, String playername) {
-		String msg = adminchat.format;
-		msg = msg.replace("%playername", playername);
-		msg = msg.replace("%message", message);
-		sendMessage(msg);
-		adminchat.getLogger().info(ChatColor.stripColor(msg));
-	}
+    public void MessageBuild(String message, String playername) {
+        String msg = adminchat.format;
+        msg = msg.replace("%playername", playername);
+        msg = msg.replace("%message", message);
+        sendMessage(msg);
+        adminchat.getLogger().info(ChatColor.stripColor(msg));
+    }
 
-	public static void sendMessage(String msg) {	
+    public void sendMessage(String msg) {
         for (final Player plr : Bukkit.getServer().getOnlinePlayers()) {
             if (plr.hasPermission("adminchat.receive") || plr.isOp()) {
                 plr.sendMessage(msg);
-            }	
+            }
         }
-	}
-	
+    }
+
     public String SubstituteColors(String input) {
         String output = null;
         output = input.replace("*black*", ChatColor.BLACK.toString());
