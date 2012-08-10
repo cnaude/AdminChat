@@ -2,7 +2,7 @@ package com.ammaraskar.adminonly;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerChatEvent;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 public class ChatListener implements Listener {
 
@@ -13,7 +13,7 @@ public class ChatListener implements Listener {
     }
 
     @EventHandler
-    public void onPlayerChat(PlayerChatEvent event) {
+    public void onPlayerChat(AsyncPlayerChatEvent event) {
         if (adminchat.toggledPlayers.contains(event.getPlayer().getName())) {
             event.setCancelled(true);
             String player = event.getPlayer().getName();

@@ -1,6 +1,8 @@
 package com.ammaraskar.adminonly;
 
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.Set;
 
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -12,7 +14,7 @@ public class AdminChat extends JavaPlugin {
 
     public String format;
     public Methods methods;
-    public HashSet<String> toggledPlayers = new HashSet<String>();
+    public Set<String> toggledPlayers = Collections.synchronizedSet(new HashSet<String>());
 
     @Override
     public void onDisable() {
