@@ -1,6 +1,7 @@
-name: AdminPrivateChat
+name: ${project.name}
+version: ${project.version}
+description: ${project.description}
 main: com.ammaraskar.adminonly.AdminChat
-version: 2.1
 authors: [ammaraskar,cnaude]
 description: >
              Talk with other admins privately

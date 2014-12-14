@@ -8,7 +8,6 @@ import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.ammaraskar.adminonly.AdminChatCommand;
 
 public class AdminChat extends JavaPlugin {
 
