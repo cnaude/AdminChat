@@ -17,8 +17,9 @@ public class ChatListener implements Listener {
         if (adminchat.toggledPlayers.contains(event.getPlayer().getName())) {
             event.setCancelled(true);
             String player = event.getPlayer().getName();
+            String world = event.getPlayer().getWorld().getName();
             String message = event.getMessage();
-            adminchat.methods.MessageBuild(message, player);
+            adminchat.methods.MessageBuild(message, player, world);
         }
     }
 

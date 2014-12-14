@@ -16,8 +16,15 @@ public class AdminChatCommand implements CommandExecutor {
         this.methods = adminchat.methods;
     }
 
+    @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender.hasPermission("adminchat.send") || sender.isOp()) {
+            String world;
+            if (sender instanceof Player) {
+                world = ((Player) sender).getWorld().getName();
+            } else {
+                world = "CONSOLE";
+            }
             if (args.length < 1) {
                 sender.sendMessage(ChatColor.RED + "Usage: /a message");
                 return true;
@@ -37,7 +44,7 @@ public class AdminChatCommand implements CommandExecutor {
                 return true;
             }
 
-            methods.MessageBuild(message, playername);
+            methods.MessageBuild(message, sender.getName(), world);
         }
         return true;
     }

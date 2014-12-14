@@ -2,6 +2,7 @@ package com.ammaraskar.adminonly;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class Methods {
@@ -22,11 +23,12 @@ public class Methods {
         return builder.toString();
     }
 
-    public void MessageBuild(String message, String playername) {
+    public void MessageBuild(String message, String name, String world) {
         String msg = adminchat.format;
-        msg = msg.replace("%playername", playername);
+        msg = msg.replace("%playername", name);
         msg = msg.replace("%message", message);
         sendMessage(msg);
+        adminchat.getServer().getPluginManager().callEvent(new AdminChatEvent(message, name, world));
         adminchat.getLogger().info(ChatColor.stripColor(msg));
     }
 

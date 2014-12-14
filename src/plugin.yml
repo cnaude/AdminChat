@@ -1,7 +1,7 @@
 name: AdminPrivateChat
 main: com.ammaraskar.adminonly.AdminChat
-version: 2.0
-author: ammaraskar
+version: 2.1
+authors: [ammaraskar,cnaude]
 description: >
              Talk with other admins privately
 commands:
