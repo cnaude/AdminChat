@@ -14,7 +14,7 @@
     <artifactId>AdminPrivateChat</artifactId>
     <version>2.1-${build.number}</version>
     <name>AdminPrivateChat</name>
-    <description>Chat with other admins privately.</description>
+    <description>Talk with other admins privately.</description>
     <url>http://jenkins.cnaude.org/job/AdminPrivateChat/</url>
 
     <repositories>
