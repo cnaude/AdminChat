@@ -14,8 +14,8 @@
     <artifactId>AdminPrivateChat</artifactId>
     <version>2.1-${build.number}</version>
     <name>AdminPrivateChat</name>
-    <description>Talk with other admins privately</description>
-    <url>http://dev.bukkit.org/server-mods/AdminPrivateChat/</url>
+    <description>Talk with other admins privately.</description>
+    <url>http://jenkins.cnaude.org/job/AdminPrivateChat/</url>
 
     <repositories>
         <!-- For anything else without its own repo -->
