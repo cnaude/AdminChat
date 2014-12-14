@@ -12,6 +12,7 @@ public class AdminChatToggleCommand implements CommandExecutor {
         this.adminchat = adminchat;
     }
 
+    @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender.hasPermission("adminchat.toggle") || sender.isOp()) {
             if (adminchat.toggledPlayers.contains(sender.getName())) {

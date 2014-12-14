@@ -2,7 +2,6 @@ package com.ammaraskar.adminonly;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class Methods {
@@ -41,7 +40,7 @@ public class Methods {
     }
 
     public String SubstituteColors(String input) {
-        String output = null;
+        String output;
         output = input.replace("*black*", ChatColor.BLACK.toString());
         output = output.replace("*dblue*", ChatColor.DARK_BLUE.toString());
         output = output.replace("*dgreen*", ChatColor.DARK_GREEN.toString());
