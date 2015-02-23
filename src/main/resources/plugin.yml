@@ -19,12 +19,12 @@ commands:
     usage: |
             /atoggle 
 permissions:
-  adminchat.send:
+  'adminchat.send':
     default: op
     description: allows player to send out message with /a or /amsg
-  adminchat.recieve:
+  'adminchat.recieve':
     default: op
     description: allows player to recieve messages sent with /a or /amsg
-  adminchat.toggle:
+  'adminchat.toggle':
     default: op
     description: allows player to toggle sending to all admins on and off
