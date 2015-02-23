@@ -22,9 +22,9 @@ permissions:
   'adminchat.send':
     default: op
     description: allows player to send out message with /a or /amsg
-  'adminchat.recieve':
+  'adminchat.receive':
     default: op
-    description: allows player to recieve messages sent with /a or /amsg
+    description: allows player to receive messages sent with /a or /amsg
   'adminchat.toggle':
     default: op
     description: allows player to toggle sending to all admins on and off

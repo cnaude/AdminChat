@@ -26,7 +26,7 @@ public class Methods {
         String msg = adminchat.format;
         msg = msg.replace("%playername", name);
         msg = msg.replace("%message", message);
-        adminchat.getServer().broadcast(msg, "adminchat.recieve");
+        adminchat.getServer().broadcast(msg, "adminchat.receive");
         adminchat.getServer().getPluginManager().callEvent(new AdminChatEvent(message, name, world));
         adminchat.getLogger().info(ChatColor.stripColor(msg));
     }
