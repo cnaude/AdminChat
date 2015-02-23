@@ -1,8 +1,6 @@
 package com.ammaraskar.adminonly;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Player;
 
 public class Methods {
 
@@ -21,14 +19,18 @@ public class Methods {
         builder.deleteCharAt(builder.length() - seperator.length());
         return builder.toString();
     }
-
-    public void MessageBuild(String message, String name, String world) {
-        String msg = adminchat.format;
-        msg = msg.replace("%playername", name);
-        msg = msg.replace("%message", message);
-        adminchat.getServer().broadcast(msg, "adminchat.receive");
-        adminchat.getServer().getPluginManager().callEvent(new AdminChatEvent(message, name, world));
-        adminchat.getLogger().info(ChatColor.stripColor(msg));
+   
+    public void SendFormattedMessage(String rawMessage, String name, String world) {
+        String formattedMessage = adminchat.format.replace("%playername", name).replace("%message", rawMessage);
+        adminchat.getServer().broadcast(formattedMessage, "adminchat.receive");
+        adminchat.getServer().getPluginManager().callEvent(new AdminChatEvent(rawMessage, name, world));
+        adminchat.getLogger().info(ChatColor.stripColor(formattedMessage));
+    }
+    
+    public void SendRawMessage(String rawMessage, String name, String world) {
+        adminchat.getServer().broadcast(rawMessage, "adminchat.receive");
+        adminchat.getServer().getPluginManager().callEvent(new AdminChatEvent(rawMessage, name, world));
+        adminchat.getLogger().info(ChatColor.stripColor(rawMessage));
     }
 
     public String SubstituteColors(String input) {

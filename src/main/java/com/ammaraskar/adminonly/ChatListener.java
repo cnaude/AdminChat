@@ -19,7 +19,7 @@ public class ChatListener implements Listener {
             String player = event.getPlayer().getName();
             String world = event.getPlayer().getWorld().getName();
             String message = event.getMessage();
-            adminchat.methods.MessageBuild(message, player, world);
+            adminchat.methods.SendFormattedMessage(message, player, world);
         }
     }
 

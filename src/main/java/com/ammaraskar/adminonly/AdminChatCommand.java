@@ -44,7 +44,7 @@ public class AdminChatCommand implements CommandExecutor {
                 return true;
             }
 
-            methods.MessageBuild(message, sender.getName(), world);
+            methods.SendFormattedMessage(message, sender.getName(), world);
         }
         return true;
     }
