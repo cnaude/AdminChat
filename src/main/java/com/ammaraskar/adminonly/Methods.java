@@ -26,17 +26,9 @@ public class Methods {
         String msg = adminchat.format;
         msg = msg.replace("%playername", name);
         msg = msg.replace("%message", message);
-        sendMessage(msg);
+        Bukkit.broadcast(msg, "adminchat.receive");
         adminchat.getServer().getPluginManager().callEvent(new AdminChatEvent(message, name, world));
         adminchat.getLogger().info(ChatColor.stripColor(msg));
-    }
-
-    public void sendMessage(String msg) {
-        for (final Player plr : Bukkit.getServer().getOnlinePlayers()) {
-            if (plr.hasPermission("adminchat.receive") || plr.isOp()) {
-                plr.sendMessage(msg);
-            }
-        }
     }
 
     public String SubstituteColors(String input) {
