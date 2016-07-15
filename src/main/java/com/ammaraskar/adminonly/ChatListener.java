@@ -1,6 +1,7 @@
 package com.ammaraskar.adminonly;
 
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
@@ -12,7 +13,7 @@ public class ChatListener implements Listener {
         this.adminchat = adminchat;
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.LOWEST)
     public void onPlayerChat(AsyncPlayerChatEvent event) {
         if (adminchat.toggledPlayers.contains(event.getPlayer().getName())) {
             event.setCancelled(true);
