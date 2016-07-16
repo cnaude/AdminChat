@@ -1,10 +1,12 @@
 package com.ammaraskar.adminonly;
 
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 
 public class Methods {
 
     AdminChat adminchat;
+    final String PERM = "adminchat.receive";
 
     public Methods(AdminChat adminChat) {
         this.adminchat = adminChat;
@@ -22,9 +24,17 @@ public class Methods {
    
     public void SendFormattedMessage(String rawMessage, String name, String world) {
         String formattedMessage = adminchat.format.replace("%playername", name).replace("%message", rawMessage);
-        adminchat.getServer().broadcast(formattedMessage, "adminchat.receive");
+        if (adminchat.sendChatToConsole) {
+            adminchat.getServer().broadcast(formattedMessage, PERM);
+            adminchat.getLogger().info(ChatColor.stripColor(formattedMessage));
+        } else {
+            for (Player player : adminchat.getServer().getOnlinePlayers()) {
+                if (player.hasPermission(PERM)) {
+                    player.sendMessage(formattedMessage);
+                }
+            }
+        }
         adminchat.getServer().getPluginManager().callEvent(new AdminChatEvent(rawMessage, name, world));
-        adminchat.getLogger().info(ChatColor.stripColor(formattedMessage));
     }
     
     public void SendRawMessage(String rawMessage, String name, String world) {

@@ -1,2 +1,3 @@
 usealias: false
 format: "*red*[AdminChat] *white*<*lpurple*%playername*white*> %message"
+send-to-console: true

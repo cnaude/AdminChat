@@ -13,6 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class AdminChat extends JavaPlugin {
 
     public String format;
+    public boolean sendChatToConsole;
     public Methods methods;
     public Set<String> toggledPlayers;
 
@@ -37,6 +38,7 @@ public class AdminChat extends JavaPlugin {
         this.getCommand("atoggle").setExecutor(new AdminChatToggleCommand(this));
         
         this.format = methods.SubstituteColors(this.getConfig().getString("format"));
+        this.sendChatToConsole = this.getConfig().getBoolean("send-to-console", true);
         this.getLogger().log(Level.INFO, "Using format: {0}", format);
         
         if (!format.contains("%playername") && !format.contains("%message")) {
